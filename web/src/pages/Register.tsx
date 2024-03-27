@@ -4,23 +4,27 @@
 import { useState } from 'react';
 import '../styles/login.css';
 import {api} from "../services/api";
+import { Link } from 'react-router-dom';
 
 function Login() {
     const [ email, setEmail ] = useState("");
     const [ password, setPassword ] = useState("");
     const [ name, setName ] = useState("");
 
+    //Fazera o cadastro do usuario!
     const handleSaveUser = async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
   
+      //recebe os dados para passar para o back
       const data = {
           email,
           password,
           name
       };
 
+      //vai mandar os dados na rota /create
       const response = await api.post("/create", data);
-      console.log(response.data)
+      console.log(response.data);
     };
   
 
@@ -69,9 +73,9 @@ function Login() {
                 </div>
 
                 <div className="text-center">
-                    <span className="txt1">Não possui conta?</span>
+                    <span className="txt1">Já possui conta?</span>
 
-                    <a href="#" className="txt2">Criar conta.</a>
+                    <Link to='/' className="txt2" >Logar.</Link>
                 </div>
 
             </form>

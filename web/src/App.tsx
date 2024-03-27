@@ -1,12 +1,11 @@
-import Login from './pages/Login';
-import Register from './pages/Register';
+import { AuthProvider } from './context/auth';
+import { AppRouter } from './routes/AppRouter';
 
 function App() {
   return (
-      <>
-       {/* <Login /> */}
-       <Register />
-      </>
+    <AuthProvider>
+      <AppRouter />
+    </AuthProvider>
   );
 }
 
