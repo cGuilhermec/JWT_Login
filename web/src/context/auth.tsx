@@ -4,7 +4,7 @@ import {User} from "../interfaces/IUser";
 import { AuthContextProps } from "../interfaces/IAuthContextProps";
 import { SignInProps } from "../interfaces/ISignInProps";
 import { AuthContext } from "../interfaces/IAuthContext";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 
 
